@@ -25,12 +25,24 @@ bool HelloWorld::init()
         return false;
     }
 
+    //
+    // "c3b": means "cocos 3d binary" format:
+    //        optimized for production
+    // "c3t": means "cocos 3d text" format
+    //        optimized for development (version control friendly)
+    // "obj": is the Wavefront file format
+    //        c3b / c3t are better formats
+    //
+    // "tools/fbx_conv" converts FBX file format to c3b/c3t
+    //
     auto sprite = Sprite3D::create("models/orc.c3b");
     this->addChild(sprite);
 
     sprite->setNormalizedPosition(Vec2(0.5, 0.5));
 
     sprite->setScale(10);
+
+    // Actions on Sprite3D
     sprite->setRotation3D(Vec3(0,180,0));
 
     return true;
