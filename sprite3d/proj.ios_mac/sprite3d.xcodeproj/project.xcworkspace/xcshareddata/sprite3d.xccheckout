@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>852ED3691A47A99B0D19C820A500AE9772B2A44E</key>
-		<string>../../../..libs/cocos2d-x/</string>
+		<string>../../../..libs/cocos2d-x</string>
 		<key>B68210C064CA5E4C654DE41E1AB4072212F988D4</key>
 		<string>../../../..</string>
 	</dict>

@@ -35,15 +35,45 @@ bool HelloWorld::init()
     //
     // "tools/fbx_conv" converts FBX file format to c3b/c3t
     //
-    auto sprite = Sprite3D::create("models/orc.c3b");
+    auto sprite = Sprite3D::create("models/orc_jump.c3t");
     this->addChild(sprite);
 
-    sprite->setNormalizedPosition(Vec2(0.5, 0.5));
+    //
+    // Setting basic properties, like a regular Node
+    // In fact, Sprite3D is a subclass of Node
+    //
+    sprite->setNormalizedPosition(Vec2(0.5, 0.25));
 
     sprite->setScale(10);
 
-    // Actions on Sprite3D
     sprite->setRotation3D(Vec3(0,180,0));
+
+    //
+    // Actions on Sprite3D
+    //
+    auto rotateby = RotateBy::create(5, Vec3(0,360,0));
+    sprite->runAction(rotateby);
+
+
+    //
+    // Animation
+    //
+    // c3b/c3t files also contain animation information
+    // we extract the information from that file, and just play the animation like any regular action
+    //
+//    auto animation = Animation3D::create("models/orc_jump.c3t");
+//    auto animate = Animate3D::create(animation);
+//    sprite->runAction(animate);
+
+    //
+    // Like any action, it can be combined with other actions
+    //
+//    auto seq = Sequence::create(rotateby, animate, nullptr);
+//    sprite->runAction(seq);
+
+//    auto ease = EaseSineIn::create(animate);
+//    sprite->runAction(ease);
+
 
     return true;
 }
