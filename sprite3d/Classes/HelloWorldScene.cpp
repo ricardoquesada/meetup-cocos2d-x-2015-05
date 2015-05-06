@@ -1,10 +1,7 @@
 #include "HelloWorldScene.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 
 USING_NS_CC;
 
-using namespace cocostudio::timeline;
 
 Scene* HelloWorld::createScene()
 {
@@ -21,19 +18,20 @@ Scene* HelloWorld::createScene()
     return scene;
 }
 
-// on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
-    //////////////////////////////
-    // 1. super init first
     if ( !Layer::init() )
     {
         return false;
     }
-    
-    auto rootNode = CSLoader::createNode("MainScene.csb");
 
-    addChild(rootNode);
+    auto sprite = Sprite3D::create("models/orc.c3b");
+    this->addChild(sprite);
+
+    sprite->setNormalizedPosition(Vec2(0.5, 0.5));
+
+    sprite->setScale(10);
+    sprite->setRotation3D(Vec3(0,180,0));
 
     return true;
 }
