@@ -46,8 +46,6 @@ void HelloWorld::onEnter()
 
     // Setup the Camera
 //    auto camera = getScene()->getDefaultCamera();
-
-//    
     auto camera = Camera::getDefaultCamera();
     camera->setPosition3D(Vec3(0,20,25));
     camera->setRotation3D(Vec3(-60,0,0));
