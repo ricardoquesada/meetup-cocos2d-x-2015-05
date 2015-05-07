@@ -75,5 +75,12 @@ bool HelloWorld::init()
 //    sprite->runAction(ease);
 
 
+    //
+    // Attachment
+    // You can attach other objects into objects
+    //
+//    auto sp = Sprite3D::create("models/axe.c3b");
+//    sprite->getAttachNode("Bip001 R Hand")->addChild(sp);
+
     return true;
 }
